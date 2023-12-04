@@ -5,9 +5,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import { Shapes } from "@/slices/Hero/Shapes";
 import Bounded from "@/components/Bounded";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Props for `Hero`.
@@ -74,11 +71,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      ref={component}
     >
-      <div
-        className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2"
-        ref={component}
-      >
+      <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
         <Shapes />
         <div className="col-start-1 md:row-start-1 " data-speed=".2">
           <h1
@@ -94,7 +89,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="job-title block animate-text bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
             {slice.primary.tag_line}
           </span>
         </div>
