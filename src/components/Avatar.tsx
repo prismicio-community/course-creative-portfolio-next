@@ -70,7 +70,7 @@ export default function Avatar({
       };
     }, component);
     return () => ctx.revert(); // cleanup!
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <div ref={component} className={clsx("relative h-full w-full", className)}>
