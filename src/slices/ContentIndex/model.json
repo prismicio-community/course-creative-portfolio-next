@@ -1,0 +1,62 @@
+{
+  "id": "blog_post_index",
+  "type": "SharedSlice",
+  "name": "ContentIndex",
+  "description": "BlogPostIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "content_type": {
+          "type": "Select",
+          "config": {
+            "label": "Content Type",
+            "placeholder": "",
+            "options": [
+              "Blogs",
+              "Projects"
+            ],
+            "default_value": "Blogs"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "view_more_text": {
+          "type": "Text",
+          "config": {
+            "label": "View More Text",
+            "placeholder": "Read More / View Project"
+          }
+        },
+        "fallback_item_image": {
+          "type": "Image",
+          "config": {
+            "label": "Fallback Item Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

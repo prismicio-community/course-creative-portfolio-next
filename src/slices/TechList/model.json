@@ -1,0 +1,41 @@
+{
+  "id": "tech_list",
+  "type": "SharedSlice",
+  "name": "TechList",
+  "description": "TechList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "tech_name": {
+          "type": "Text",
+          "config": {
+            "label": "Tech Name",
+            "placeholder": ""
+          }
+        },
+        "tech_color": {
+          "type": "Color",
+          "config": {
+            "label": "Tech Color",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}
