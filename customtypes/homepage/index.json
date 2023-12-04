@@ -11,6 +11,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "tech_list": {
+              "type": "SharedSlice"
+            },
+            "experience": {
+              "type": "SharedSlice"
+            },
+            "blog_post_index": {
+              "type": "SharedSlice"
+            },
+            "biography": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }
