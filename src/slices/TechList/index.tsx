@@ -2,12 +2,15 @@
 
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { gsap } from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
 import { MdCircle } from "react-icons/md";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Props for `TechList`.

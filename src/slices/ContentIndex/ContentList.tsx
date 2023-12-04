@@ -3,8 +3,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import { asImageSrc, isFilled } from "@prismicio/client";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MdArrowOutward } from "react-icons/md";
 import { Content } from "@prismicio/client";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type ContentListProps = {
   items: Content.BlogPostDocument[] | Content.ProjectDocument[];

@@ -8,12 +8,9 @@ import { gsap } from "gsap";
 
 export function Shapes() {
   return (
-    <div
-      className="row-span-1 row-start-1 -mt-9 aspect-square  md:col-span-1 md:col-start-2 md:mt-0"
-      data-speed="1"
-    >
+    <div className="row-span-1 row-start-1 -mt-9 aspect-square  md:col-span-1 md:col-start-2 md:mt-0">
       <Canvas
-        className="z-0  "
+        className="z-0"
         shadows
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
@@ -137,7 +134,7 @@ function Geometry({ r, position, geometry, soundEffects, materials }) {
   };
 
   useEffect(() => {
-    gsap.context(() => {
+    let ctx = gsap.context(() => {
       setVisible(true);
       gsap.from(meshRef.current.scale, {
         x: 0,
@@ -147,9 +144,8 @@ function Geometry({ r, position, geometry, soundEffects, materials }) {
         ease: "elastic.out(1,0.3)",
         delay: gsap.utils.random(0, 0.5),
       });
-
-      return () => cubeTexture.revert();
     });
+    return () => ctx.revert();
   }, []);
 
   return (
