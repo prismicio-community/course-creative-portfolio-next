@@ -5,8 +5,19 @@
 .background-gradient {
   background: radial-gradient(
     circle at top center,
-    hsla(222, 80%, 60%, 0.5) 0%,
-    hsla(222, 0%, 0%, 0) 50%,
-    hsla(222, 0%, 0%, 0) 100%
+    hsla(30, 100%, 47%, 0.9) 4%,
+    hsla(0, 0%, 0%, 1) 30%, /* Default style */
+    hsla(0, 0%, 0%, 1) 100%
   );
+}
+
+@screen md {
+  .background-gradient {
+    background: radial-gradient(
+      circle at top center,
+      hsla(30, 100%, 47%, 0.9) 1%,
+      hsla(0, 0%, 0%, 1) 30%, /* Style for md screens */
+      hsla(0, 0%, 0%, 1) 100%
+    );
+  }
 }

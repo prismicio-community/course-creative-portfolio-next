@@ -40,15 +40,15 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(600, 400)
-              : gsap.utils.random(-600, -400);
+              ? gsap.utils.random(500, 300)
+              : gsap.utils.random(-500, -300);
           },
         },
         {
           x: (index) => {
             return index % 2 === 0
-              ? gsap.utils.random(-600, -400)
-              : gsap.utils.random(600, 400);
+              ? gsap.utils.random(-500, -300)
+              : gsap.utils.random(500, 300);
           },
           ease: "power1.inOut",
         },
@@ -65,7 +65,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       ref={component}
     >
       <Bounded as="div">
-        <Heading size="xl" className="mb-8" as="h2">
+        <Heading size="lg" className="mb-8" as="h2">
           {slice.primary.title}
         </Heading>
       </Bounded>
@@ -80,7 +80,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
             <React.Fragment key={index}>
               <span
                 className={
-                  "tech-item text-8xl font-extrabold uppercase tracking-tighter"
+                  "tech-item text-5xl font-extrabold uppercase tracking-tighter"
                 }
                 style={{
                   color: index === 7 && tech_color ? tech_color : "inherit",

@@ -29,9 +29,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             x: 0,
             opacity: 1,
             rotate: 0,
-
             ease: "elastic.out(1,0.3)",
-            duration: 1,
+            duration: 1.5,
             transformOrigin: "left top",
             stagger: { each: 0.1, from: "random" },
           },
@@ -39,14 +38,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         .fromTo(
           ".job-title",
           {
-            y: 20,
+            x:60,
             opacity: 0,
             scale: 1.2,
           },
           {
             opacity: 1,
-            y: 0,
-            duration: 1,
+            x: 0,
+            duration: 2,
             scale: 1,
             ease: "elastic.out(1,0.3)",
           },
@@ -73,23 +72,23 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       ref={component}
     >
-      <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
+      <div className="grid min-h-[65vh] grid-cols-1 items-center md:grid-cols-2">
         <Shapes />
-        <div className="col-start-1 md:row-start-1 " data-speed=".2">
+        <div className="col-start-1 md:row-start-1 text-center w-fit select-none" data-speed=".4">
           <h1
-            className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tighter"
+            className="mb-4 text-[clamp(2rem,16vmin,16rem)] font-extrabold leading-none tracking-tighter md:text-left"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className="block text-slate-300 ">
+            <span className="block text-[#F07900] ">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
             <span className="-mt-[.2em] block text-slate-500  ">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+          <span className="job-title block bg-gradient-to-tr from-[#D35100] via-[#F8A145] to-[#D35100] bg-clip-text text-xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-3xl md:text-right">
             {slice.primary.tag_line}
           </span>
         </div>

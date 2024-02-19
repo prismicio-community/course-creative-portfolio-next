@@ -8,13 +8,13 @@ import { gsap } from "gsap";
 
 export function Shapes() {
   return (
-    <div className="row-span-1 row-start-1 -mt-9 aspect-square  md:col-span-1 md:col-start-2 md:mt-0">
+    <div className="row-span-1 row-start-1 -mt-9 aspect-square h-fit w-fit justify-items-end justify-self-center md:col-span-1 md:col-start-2 md:h-5/6 md:w-5/6 md:justify-self-end">
       <Canvas
         className="z-0"
         shadows
         gl={{ antialias: false }}
         dpr={[1, 1.5]}
-        camera={{ position: [0, 0, 25], fov: 30, near: 1, far: 40 }}
+        camera={{ position: [0, 0, 25], fov: 20, near: 1, far: 40 }}
       >
         <Suspense fallback={null}>
           <Geometries />
@@ -25,7 +25,7 @@ export function Shapes() {
             blur={1}
             far={9}
           />
-          <Environment preset="studio" />
+          <Environment preset="dawn" />
         </Suspense>
       </Canvas>
     </div>
@@ -68,21 +68,50 @@ function Geometries() {
   ];
 
   const materials = [
-    new THREE.MeshNormalMaterial(),
-    new THREE.MeshStandardMaterial({ color: 0x2ecc71, roughness: 0 }),
-    new THREE.MeshStandardMaterial({ color: 0xf1c40f, roughness: 0.4 }),
-    new THREE.MeshStandardMaterial({ color: 0xe74c3c, roughness: 0.1 }),
-    new THREE.MeshStandardMaterial({ color: 0x8e44ad, roughness: 0.1 }),
-    new THREE.MeshStandardMaterial({ color: 0x1abc9c, roughness: 0.1 }),
     new THREE.MeshStandardMaterial({
-      roughness: 0,
-      metalness: 0.5,
-      color: 0x2980b9,
+      color: 0x2ecc71,
+      metalness: 0.8,
+      roughness: 0.5,
     }),
     new THREE.MeshStandardMaterial({
-      color: 0x2c3e50,
-      roughness: 0.1,
-      metalness: 0.5,
+      color: 0xf1c40f,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0xe74c3c,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x8e44ad,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x1abc9c,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x3498db,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0xe67e22,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x34495e,
+      metalness: 0.8,
+      roughness: 0.5,
+    }),
+    new THREE.MeshStandardMaterial({
+      color: 0x9b59b6,
+      metalness: 0.8,
+      roughness: 0.5,
     }),
   ];
 
