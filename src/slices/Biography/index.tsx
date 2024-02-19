@@ -20,8 +20,8 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="grid gap-x-5 gap-y-6 text-slate-500 md:grid-cols-[2fr,1fr]">
-        <Heading size="xl" className="col-start-1">
+      <div className="grid gap-x-1 gap-y-6 text-slate-500 md:grid-cols-[2fr,1fr] md:px-16">
+        <Heading size="lg" className="col-start-1 md:pt-16">
           {slice.primary.heading}
         </Heading>
         <Avatar
