@@ -8,6 +8,8 @@ import Link from "next/link";
 import { MdMenu, MdClose } from "react-icons/md";
 import Button from "./Button";
 import { usePathname } from "next/navigation";
+import { isFilled } from "@prismicio/client";
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
 
 export default function NavBar({
   settings,
@@ -33,7 +35,7 @@ export default function NavBar({
         </div>
         <div
           className={clsx(
-            "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 bg-slate-50 pr-4 pt-14 transition-transform duration-300 ease-in-out md:hidden",
+            "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-grow flex-col items-end gap-4 bg-slate-50 pr-4 pt-14 transition-transform duration-300 ease-in-out md:hidden",
             open ? "translate-x-0" : "translate-x-[100%]",
           )}
         >
@@ -45,49 +47,83 @@ export default function NavBar({
           >
             <MdClose />
           </button>
-          {settings.data.nav_item.map(({ link, label }, index) => (
-            <React.Fragment key={label}>
-              <li className="first:mt-8">
-                <PrismicNextLink
-                  className={clsx(
-                    "group relative block overflow-hidden rounded px-3 text-3xl font-bold text-slate-900 ",
-                  )}
-                  field={link}
-                  onClick={() => setOpen(false)}
-                  aria-current={
-                    pathname.includes(asLink(link) as string)
-                      ? "page"
-                      : undefined
-                  }
-                >
-                  <span
+          <div className="gap-y-4 text-right">
+            {settings.data.nav_item.map(({ link, label }, index) => (
+              <React.Fragment key={label}>
+                <li className="first:mt-8">
+                  <PrismicNextLink
                     className={clsx(
-                      "absolute inset-0 z-0 h-full translate-y-12 rounded bg-yellow-300 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
-                      pathname.includes(asLink(link) as string)
-                        ? "translate-y-6"
-                        : "translate-y-18",
+                      "group relative block overflow-hidden rounded px-3 text-3xl font-bold text-slate-900 ",
                     )}
-                  />
-                  <span className="relative">{label}</span>
-                </PrismicNextLink>
-              </li>
-              {index < settings.data.nav_item.length - 1 && (
-                <span
-                  className="hidden text-4xl font-thin leading-[0] text-slate-400 md:inline"
-                  aria-hidden="true"
+                    field={link}
+                    onClick={() => setOpen(false)}
+                    aria-current={
+                      pathname.includes(asLink(link) as string)
+                        ? "page"
+                        : undefined
+                    }
+                  >
+                    <span
+                      className={clsx(
+                        "absolute inset-0 z-0 h-full translate-y-12 rounded bg-yellow-300 transition-transform duration-300 ease-in-out group-hover:translate-y-0",
+                        pathname.includes(asLink(link) as string)
+                          ? "translate-y-6"
+                          : "translate-y-18",
+                      )}
+                    />
+                    <span className="relative">{label}</span>
+                  </PrismicNextLink>
+                </li>
+                {index < settings.data.nav_item.length - 1 && (
+                  <span
+                    className="hidden text-4xl font-thin leading-[0] text-slate-400 md:inline"
+                    aria-hidden="true"
+                  >
+                    /
+                  </span>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+          <div className="fixed bottom-5 ">
+          <div className="flex items-start gap-2 px-2 pb-2">
+              {isFilled.link(settings.data.github_link) && (
+                <PrismicNextLink
+                  field={settings.data.github_link}
+                  className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+                  aria-label={settings.data.name + " on GitHub"}
+                  onClick={() => setOpen(false)}
                 >
-                  /
-                </span>
+                  <FaGithub />
+                </PrismicNextLink>
               )}
-            </React.Fragment>
-          ))}
-          <li>
+              {isFilled.link(settings.data.twitter_link) && (
+                <PrismicNextLink
+                  field={settings.data.twitter_link}
+                  className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+                  aria-label={settings.data.name + " on Twitter"}
+                  onClick={() => setOpen(false)}
+                >
+                  <FaTwitter />
+                </PrismicNextLink>
+              )}
+              {isFilled.link(settings.data.linkedin_link) && (
+                <PrismicNextLink
+                  field={settings.data.linkedin_link}
+                  className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+                  aria-label={settings.data.name + " on LinkedIn"}
+                  onClick={() => setOpen(false)}
+                >
+                  <FaLinkedin />
+                </PrismicNextLink>
+              )}
+            </div>
             <Button
               linkField={settings.data.cta_link}
               label={settings.data.cta_label}
               className="ml-3"
             />
-          </li>
+          </div>
         </div>
         <DesktopMenu settings={settings} pathname={pathname} />
       </ul>
