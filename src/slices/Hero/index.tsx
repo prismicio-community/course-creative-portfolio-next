@@ -74,9 +74,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     >
       <div className="grid min-h-[65vh] grid-cols-1 items-center md:grid-cols-2">
         <Shapes />
-        <div className="col-start-1 md:row-start-1 text-center w-fit select-none" data-speed=".4">
+        <div className="col-start-1 md:row-start-1 text-center justify-self-center w-fit select-none" data-speed=".4">
           <h1
-            className="mb-4 text-[clamp(2rem,14vmin,14rem)] font-extrabold leading-none tracking-tighter md:text-left md:pl-10"
+            className="mb-4 text-[clamp(2rem,14vmin,14rem)] font-extrabold leading-none tracking-tighter md:text-left"
             aria-label={
               slice.primary.first_name + " " + slice.primary.last_name
             }
