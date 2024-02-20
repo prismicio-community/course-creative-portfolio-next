@@ -47,7 +47,7 @@ export default function NavBar({
           >
             <MdClose />
           </button>
-          <div className="gap-y-4 text-right">
+          <div className="gap-y-8 text-right">
             {settings.data.nav_item.map(({ link, label }, index) => (
               <React.Fragment key={label}>
                 <li className="first:mt-8">
@@ -86,7 +86,7 @@ export default function NavBar({
             ))}
           </div>
           <div className="fixed bottom-5 ">
-          <div className="flex items-start gap-2 px-2 pb-2">
+          <div className="flex justify-end gap-2 pb-2">
               {isFilled.link(settings.data.github_link) && (
                 <PrismicNextLink
                   field={settings.data.github_link}

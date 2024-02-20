@@ -32,7 +32,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
       <div className="prose prose-xl prose-slate prose-invert min-w-full text-justify md:my-8">
         <PrismicRichText field={slice.primary.body} />
       </div>
-      <div className="flex w-full justify-center pt-5 md:justify-end">
+      <div className="hidden md:flex w-full pt-10 md:pt-1 justify-end">
         <Button
           linkField={slice.primary.button_link}
           label={slice.primary.button_text}
