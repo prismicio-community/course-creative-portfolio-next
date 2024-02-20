@@ -35,7 +35,7 @@ export default function NavBar({
         </div>
         <div
           className={clsx(
-            "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-grow flex-col items-end gap-4 bg-slate-50 pr-4 pt-14 transition-transform duration-300 ease-in-out md:hidden",
+            "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-grow flex-col items-end gap-4 bg-slate-50 pr-4 pt-4 transition-transform duration-300 ease-in-out md:hidden",
             open ? "translate-x-0" : "translate-x-[100%]",
           )}
         >
@@ -47,10 +47,10 @@ export default function NavBar({
           >
             <MdClose />
           </button>
-          <div className="gap-y-8 text-right">
+          <div className="gap-y-12 text-right">
             {settings.data.nav_item.map(({ link, label }, index) => (
               <React.Fragment key={label}>
-                <li className="first:mt-8">
+                <li className="first:mt-10">
                   <PrismicNextLink
                     className={clsx(
                       "group relative block overflow-hidden rounded px-3 text-3xl font-bold text-slate-900 ",
